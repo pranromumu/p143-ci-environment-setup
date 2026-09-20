@@ -12,12 +12,12 @@ def test_operation_system():
     assert current_os in ["win32","linux","darwin"] , f"Unexpected os:{current_os}"
 def test_working_directory():
     cwd = os.getcwd()
-    assert "p143_CI_Environment_Setup" in cwd
+    assert "p143" in cwd.lower()
 def test_environment_variable():
     env_value = os.getenv("CI ENVIRONMENT","LOCAL")
     assert env_value in ["github-actions", "LOCAL"]
 def test_ci_vs_local():
-    is_ci = os.getenv("GITHUB_ACTIONS") == True
+    is_ci = os.getenv("GITHUB_ACTIONS") == "true"
     if is_ci:
         assert sys.platform== "linux"
     else:

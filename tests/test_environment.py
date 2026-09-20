@@ -10,7 +10,7 @@ def test_pytest_availbale():
 def test_operation_system():
     current_os = sys.platform
     assert current_os in ["win32","linux","darwin"] , f"Unexpected os:{current_os}"
-def test_test_working_directory():
+def test_working_directory():
     cwd = os.getcwd()
     assert "p143_CI_Environment_Setup" in cwd
 def test_environment_variable():
